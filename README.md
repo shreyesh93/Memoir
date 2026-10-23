@@ -24,6 +24,29 @@ Create packing lists, manage items, and track packing progress.
 ### 🔐 Login and Registration
 Login and registration interfaces for the application.
 
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Memoir Login Page](./screenshots/login.png)
+
+### 📝 Registration Page
+![Memoir Registration Page](./screenshots/signup.png)
+
+### 🏠 Homepage
+![Memoir Homepage](./screenshots/homepage.png)
+
+### ✅ To-Do List
+![Memoir To-Do List](./screenshots/to-do.png)
+
+### 📔 Daily Journal
+![Memoir Daily Journal](./screenshots/dailyJournal.png)
+
+### 💸 Eat n Split
+![Memoir Eat n Split](./screenshots/splitwise.png)
+
+### 🧳 Packing List
+![Memoir Packing List](./screenshots/packingList.png)
+
 ## 🛠️ Tech Stack
 
 - React
@@ -38,9 +61,15 @@ Login and registration interfaces for the application.
 ```text
 Memoir/
 ├── public/
+├── screenshots/
+│   ├── dailyJournal.png
+│   ├── login.png
+│   ├── packingList.png
+│   ├── signup.png
+│   ├── splitwise.png
+│   └── to-do.png
 ├── src/
 │   ├── assets/
-│   │   └── components/
 │   ├── features/
 │   │   ├── dailyJournal/
 │   │   ├── eat-n-split/
@@ -61,6 +90,7 @@ Memoir/
 ├── index.html
 ├── package.json
 ├── package-lock.json
+├── README.md
 └── vite.config.js
 ```
 
@@ -75,7 +105,7 @@ Install [Node.js](https://nodejs.org/) and npm.
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/shreyesh93/Memoir.git
 ```
 
 ### 2. Navigate to the project folder
