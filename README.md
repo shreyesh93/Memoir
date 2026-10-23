@@ -32,9 +32,6 @@ Login and registration interfaces for the application.
 ### 📝 Registration Page
 ![Memoir Registration Page](./screenshots/signup.png)
 
-### 🏠 Homepage
-![Memoir Homepage](./screenshots/homepage.png)
-
 ### ✅ To-Do List
 ![Memoir To-Do List](./screenshots/to-do.png)
 
