@@ -1,0 +1,337 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+/* =========================
+   1. Global styles
+========================= */
+
+.packing-page {
+  --color-lightest: #fff4e6;
+  --color-light: #ffe8cc;
+  --color-medium: #ffa94d;
+  --color-dark: #070401;
+
+  --color-text: #495057;
+  --color-heading: #343a40;
+  --color-muted: #868e96;
+  --color-white: #ffffff;
+  --color-border: #dee2e6;
+
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto minmax(30rem, 1fr) auto;
+
+  background-color: #fffaf3;
+  color: var(--color-text);
+   font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.packing-page * {
+  box-sizing: border-box;
+}
+
+/* =========================
+   2. Header
+========================= */
+
+.packing-page h1 {
+  padding: 2.5rem 1.5rem;
+  background-color: var(--color-lightest);
+  color: var(--color-dark);
+
+  text-align: center;
+   font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  word-spacing: normal;
+  text-transform: none;
+
+  border-bottom: 1px solid var(--color-light);
+}
+
+/* =========================
+   3. Add item form
+========================= */
+
+.packing-page .add-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+
+  padding: 2rem;
+  background-color: #f7e5be;
+  border-bottom: 1px solid var(--color-light);
+}
+
+.packing-page .add-form h3 {
+  margin-right: 0.8rem;
+  color: var(--color-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.packing-page button,
+.packing-page select,
+.packing-page input:not([type="checkbox"]) {
+  max-width: 100%;
+  padding: 1rem 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  background-color: #310000;
+  color: var(--color-text);
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.packing-page button {
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.packing-page button:focus-visible,
+.packing-page input:focus-visible,
+.packing-page select:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
+.packing-page .add-form select {
+  min-width: 8rem;
+  background-color: var(--color-lightest);
+}
+
+.packing-page .add-form input {
+  width: 26rem;
+  max-width: 100%;
+  background-color: var(--color-lightest);
+}
+
+.packing-page .add-form button {
+  min-width: 9rem;
+  border-color: var(--color-dark);
+  background-color: var(--color-medium);
+  color: var(--color-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.packing-page .add-form button:hover {
+  background-color: var(--color-dark);
+}
+
+/* =========================
+   4. Packing list
+========================= */
+
+.packing-page .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+
+  min-height: 30rem;
+  padding: 3rem 2rem;
+
+  background-color: var(--color-lightest);
+  color: var(--color-text);
+}
+
+.packing-page .list ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 1rem;
+
+  width: 100%;
+  max-width: 100rem;
+  list-style: none;
+}
+
+/* Individual item card */
+.packing-page .list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  min-width: 0;
+  padding: 1.2rem 1.5rem;
+
+  border: 1px solid var(--color-light);
+  border-radius: 9px;
+  background-color: #ffffff;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.packing-page .list li:hover {
+  border-color: var(--color-medium);
+  background-color: #fffaf3;
+}
+
+.packing-page .list li span {
+  overflow-wrap: anywhere;
+}
+
+/* Checkbox */
+.packing-page input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  accent-color: var(--color-dark);
+  cursor: pointer;
+}
+
+/* Item text */
+.packing-page .list li span {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Delete button */
+.packing-page .list li button {
+  margin-left: auto;
+  padding: 0.3rem 0.7rem;
+
+  border: none;
+  background: transparent;
+  color: #e03131;
+
+  font-size: 1.8rem;
+}
+
+.packing-page .list li button:hover {
+  background-color: #fff0f0;
+}
+
+/* Packed items */
+.packing-page .list li input:checked + span {
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+/* =========================
+   5. Sorting and clear actions
+========================= */
+
+.packing-page .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.packing-page .actions select {
+  min-width: 22rem;
+  background-color: #ffffff;
+}
+
+.packing-page .actions button {
+  background-color: var(--color-medium);
+  border-color: transparent;
+  color: var(--color-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.packing-page .actions button:hover {
+  background-color: var(--color-dark);
+}
+
+/* =========================
+   6. Stats footer
+========================= */
+
+.packing-page .stats {
+  padding: 2.5rem 1.5rem;
+
+  background-color: #f7e5be;
+  border-top: 1px solid var(--color-light);
+
+  color: var(--color-text);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.packing-page .stats em {
+  color: var(--color-dark);
+  font-style: normal;
+}
+
+/* =========================
+   7. Responsive design
+========================= */
+
+@media (max-width: 700px) {
+  .packing-page h1 {
+    padding: 2rem 1rem;
+    font-size: 3rem;
+  }
+
+  .packing-page .add-form {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+  }
+
+  .packing-page .add-form h3 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .packing-page .add-form input,
+  .packing-page .add-form select,
+  .packing-page .add-form button {
+    width: 100%;
+    max-width: 40rem;
+  }
+
+  .packing-page .list {
+    padding: 2rem 1.2rem;
+  }
+
+  .packing-page .list ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .packing-page .actions {
+    flex-direction: column;
+  }
+
+  .packing-page .actions select,
+  .packing-page .actions button {
+    width: 100%;
+    max-width: 35rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .packing-page h1 {
+    font-size: 2.6rem;
+  }
+
+  .packing-page .list li {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,91 @@
+
+.navbar {
+  width: 100%;
+  padding: 1.2rem 2.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffe8cc;
+  box-shadow: 0 2px 8px rgba(73, 80, 87, 0.04);
+}
+
+/* App title */
+.navbar h2 {
+  margin: 0 0 1rem;
+  color: #343a40;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* Navigation links container */
+.navbar nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+/* Navigation links */
+.navbar a {
+  color: #495057;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: #f76707;
+}
+
+/* Active route */
+.navbar a.active {
+  color: #e67700;
+  font-weight: 700;
+}
+
+/* Separators between links */
+.navbar nav span {
+  color: #ced4da;
+  font-size: 1.3rem;
+}
+
+/* Logout button */
+.navbar button {
+  margin-left: auto; /* Push button to the right */
+  padding: 0.6rem 1.4rem;
+  border: 1px solid #ffe8cc;
+  border-radius: 7px;
+  background-color: #fff4e6;
+  color: #495057;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.navbar button:hover {
+  background-color: #ffe8cc;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .navbar h2 {
+    font-size: 1.9rem;
+  }
+
+  .navbar nav {
+    gap: 0.6rem;
+  }
+
+  .navbar a {
+    font-size: 1.3rem;
+  }
+}

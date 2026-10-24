@@ -1,0 +1,150 @@
+/* LoginForm.css */
+
+* {
+  box-sizing: border-box;
+}
+
+.Login-form {
+  width: 400px;
+  margin: 80px auto;
+  padding: 35px 40px;
+
+  background: #ffffff;
+  border-radius: 15px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Login-form h1 {
+  text-align: center;
+  margin: 0 0 10px;
+
+  font-size: 32px;
+  color: #222;
+}
+
+/* Input container */
+
+.inpt-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+
+.inpt-fields input {
+  width: 100%;
+  padding: 13px 15px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  font-size: 16px;
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.inpt-fields input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.inpt-fields input::placeholder {
+  color: #999;
+}
+
+/* Error message */
+
+.inpt-fields p {
+  margin: -5px 0 0;
+
+  color: #dc2626;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Buttons */
+
+.form-btns {
+  display: flex;
+  gap: 12px;
+}
+
+.form-btns button {
+  flex: 1;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* Login button */
+
+.submit-btn {
+  background: #4f46e5;
+  color: white;
+}
+
+.submit-btn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* Reset button */
+
+.reset-btn {
+  background: #e5e7eb;
+  color: #333;
+}
+
+.reset-btn:hover {
+  background: #d1d5db;
+  transform: translateY(-1px);
+}
+
+/* Sign up text */
+
+.Login-form > p {
+  margin: 0;
+
+  text-align: center;
+
+  color: #666;
+  font-size: 14px;
+}
+
+.Login-form > p a {
+  color: #4f46e5;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.Login-form > p a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .Login-form {
+    width: 90%;
+    padding: 30px 25px;
+    margin: 50px auto;
+  }
+}

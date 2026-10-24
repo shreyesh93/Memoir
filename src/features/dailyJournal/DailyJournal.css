@@ -1,0 +1,251 @@
+
+.daily-journal {
+  --color-dark: #343a40;
+  --color-light: #dee2e6;
+  --color-lightest: #fff4e6;
+  --color-orange: #ff922b;
+  --color-orange-dark: #f76707;
+  --color-text: #495057;
+
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  color: var(--color-text);
+   font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header */
+.journal-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.journal-header h1 {
+  margin: 0 0 0.8rem;
+  color: var(--color-dark);
+  font-size: 3rem;
+}
+
+.journal-header p {
+  margin: 0;
+  color: #868e96;
+  font-size: 1.2rem;
+}
+
+/* Journal input card */
+.journal-card {
+  padding: 2rem;
+  border: 1px solid #ffe8cc;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 12px rgba(73, 80, 87, 0.06);
+}
+
+/* Label */
+.journal-card label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+/* Text area */
+.journal-textarea {
+  display: block;
+  width: 100%;
+  min-height: 240px;
+  resize: vertical;
+  padding: 1.2rem;
+  border: 1px solid var(--color-light);
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.journal-textarea::placeholder {
+  color: #adb5bd;
+  font-size: 1.05rem;
+}
+
+.journal-textarea:focus {
+  outline: none;
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(255, 146, 43, 0.15);
+}
+
+/* Actions */
+.journal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.journal-count {
+  color: #868e96;
+  font-size: 1rem;
+}
+
+/* Main button */
+.journal-button {
+  padding: 1rem 1.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-orange);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.journal-button:hover {
+  background-color: var(--color-orange-dark);
+  transform: translateY(-1px);
+}
+
+/* History section */
+.journal-history {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #ffe8cc;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 12px rgba(73, 80, 87, 0.06);
+}
+
+.journal-history h2 {
+  margin: 0 0 1.5rem;
+  color: var(--color-dark);
+  font-size: 1.6rem;
+}
+
+/* Empty state */
+.journal-empty {
+  margin: 0;
+  padding: 1.6rem;
+  border-radius: 8px;
+  background-color: var(--color-lightest);
+  color: #868e96;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* History list */
+.journal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0;
+  padding-left: 1.8rem;
+}
+
+.journal-item {
+  padding-left: 0.3rem;
+}
+
+/* Date toggle button */
+.journal-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ffe8cc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--color-dark);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.journal-date:hover,
+.journal-date.selected {
+  background-color: var(--color-lightest);
+  border-color: #ffc078;
+}
+
+.journal-arrow {
+  color: var(--color-orange-dark);
+  font-size: 1.3rem;
+}
+
+/* Expanded journal entry */
+.journal-entry-text {
+  margin: 0.5rem 0 0;
+  padding: 1.2rem;
+  border-left: 3px solid var(--color-orange);
+  border-radius: 0 8px 8px 0;
+  background-color: #fffaf3;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .daily-journal {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .journal-header {
+    margin-bottom: 1.8rem;
+  }
+
+  .journal-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .journal-header p {
+    font-size: 1rem;
+  }
+
+  .journal-card,
+  .journal-history {
+    padding: 1.2rem;
+  }
+
+  .journal-card label {
+    font-size: 1.05rem;
+  }
+
+  .journal-textarea {
+    min-height: 180px;
+    font-size: 1rem;
+  }
+
+  .journal-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .journal-button {
+    width: 100%;
+  }
+
+  .journal-history h2 {
+    font-size: 1.4rem;
+  }
+
+  .journal-list {
+    padding-left: 1.3rem;
+  }
+}
