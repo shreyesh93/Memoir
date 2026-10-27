@@ -95,12 +95,12 @@
 /* Login button */
 
 .submit-btn {
-  background: #4f46e5;
+  background: #f19452;
   color: white;
 }
 
 .submit-btn:hover {
-  background: #4338ca;
+  background: #ea580c;
   transform: translateY(-1px);
 }
 
@@ -128,7 +128,7 @@
 }
 
 .Login-form > p a {
-  color: #4f46e5;
+  color: #f19452;;
 
   font-weight: 600;
 

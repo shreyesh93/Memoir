@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./RegisteryForm.css";
 import { Link } from "react-router-dom";
 
-export let registeredUsers = JSON.parse(localStorage.getItem('formData')) || [
+export let registeredUsers = JSON.parse(localStorage.getItem("formData")) || [
   {
     username: "sarthak",
     email: "sarthak31@gmail.com",
@@ -46,79 +46,78 @@ const RegisterForm = () => {
   };
 
   const validateFormData = () => {
-  const newErrors = {};
+    const newErrors = {};
 
-  const usernameExists = registeredUsers.some(
-    (user) =>
-      user.username &&
-      user.username.trim().toLowerCase() ===
-        formData.username.trim().toLowerCase()
-  );
+    const usernameExists = registeredUsers.some(
+      (user) =>
+        user.username &&
+        user.username.trim().toLowerCase() ===
+          formData.username.trim().toLowerCase(),
+    );
 
-  const emailExists = registeredUsers.some(
-    (user) =>
-      user.email &&
-      user.email.trim().toLowerCase() ===
-        formData.email.trim().toLowerCase()
-  );
+    const emailExists = registeredUsers.some(
+      (user) =>
+        user.email &&
+        user.email.trim().toLowerCase() === formData.email.trim().toLowerCase(),
+    );
 
-  const phoneExists = registeredUsers.some(
-    (user) => user.phone && user.phone.trim() === formData.phone.trim()
-  );
+    const phoneExists = registeredUsers.some(
+      (user) => user.phone && user.phone.trim() === formData.phone.trim(),
+    );
 
-  // Username
-  if (!formData.username.trim()) {
-    newErrors.username = "Username is required";
-  } else if (formData.username.trim().length < 3) {
-    newErrors.username = "Username must contain at least 3 characters";
-  } else if (usernameExists) {
-    newErrors.username = "Username already exists";
-  }
+    // Username
+    if (!formData.username.trim()) {
+      newErrors.username = "Username is required";
+    } else if (formData.username.trim().length < 3) {
+      newErrors.username = "Username must contain at least 3 characters";
+    } else if (usernameExists) {
+      newErrors.username = "Username already exists";
+    }
 
-  // Email
-  if (!formData.email.trim()) {
-    newErrors.email = "Email is required";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(formData.email)) {
-    newErrors.email = "Enter a valid email address";
-  } else if (emailExists) {
-    newErrors.email = "Email already exists";
-  }
+    // Email
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    } else if (emailExists) {
+      newErrors.email = "Email already exists";
+    }
 
-  // Phone
-  if (!formData.phone.trim()) {
-    newErrors.phone = "Phone is required";
-  } else if (!/^\d{10}$/.test(formData.phone)) {
-    newErrors.phone = "Enter a valid Phone Number";
-  } else if (phoneExists) {
-    newErrors.phone = "Phone number already exists";
-  }
+    // Phone
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = "Enter a valid Phone Number";
+    } else if (phoneExists) {
+      newErrors.phone = "Phone number already exists";
+    }
 
-  // Password
-  if (!formData.password) {
-    newErrors.password = "Password is required";
-  } else if (formData.password.length < 8) {
-    newErrors.password = "Password must be at least 8 characters long";
-  } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
-    newErrors.password =
-      "Password must contain at least one uppercase letter, one lowercase letter, and one number";
-  }
+    // Password
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters long";
+    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
+      newErrors.password =
+        "Password must contain at least one uppercase letter, one lowercase letter, and one number";
+    }
 
-  // Confirm password
-  if (!formData.confirmPass) {
-    newErrors.confirmPass = "Confirm Password is required";
-  } else if (formData.password !== formData.confirmPass) {
-    newErrors.confirmPass = "Passwords do not match";
-  }
+    // Confirm password
+    if (!formData.confirmPass) {
+      newErrors.confirmPass = "Confirm Password is required";
+    } else if (formData.password !== formData.confirmPass) {
+      newErrors.confirmPass = "Passwords do not match";
+    }
 
-  // Terms
-  if (!formData.terms) {
-    newErrors.terms = "You must accept the terms and conditions";
-  }
+    // Terms
+    if (!formData.terms) {
+      newErrors.terms = "You must accept the terms and conditions";
+    }
 
-  setErrors(newErrors);
+    setErrors(newErrors);
 
-  return Object.keys(newErrors).length === 0;
-};
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -126,13 +125,13 @@ const RegisterForm = () => {
     if (!isValid) {
       return;
     }
-    registeredUsers = [ ...registeredUsers, formData ];
-   localStorage.setItem('formData', JSON.stringify(registeredUsers));
+    registeredUsers = [...registeredUsers, formData];
+    localStorage.setItem("formData", JSON.stringify(registeredUsers));
     console.log(registeredUsers);
 
     console.log("Submitted", formData);
     alert("User Registered successfully");
-    setSubmittedData(formData)
+    setSubmittedData(formData);
     setSubmitted(true);
     setFormData(userTemplate);
   };
@@ -142,7 +141,6 @@ const RegisterForm = () => {
     setErrors({});
     setSubmitted(false);
   };
-
 
   return (
     <div className="Registry-form">
@@ -272,8 +270,7 @@ const RegisterForm = () => {
       )}
 
       <p>
-        Already have an account?{" "}
-        <Link to='/login'>Login</Link>
+        Already have an account? <Link to="/login">Login</Link>
       </p>
     </div>
   );
